@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidget";
 
 
 export default function NavBar() {
@@ -7,6 +8,7 @@ export default function NavBar() {
             <nav>
                 <a href="#">Home</a>
                 <a href="#">Productos</a>
+                <a href="#"><CartWidget /></a>
             </nav>
         </header>
     )

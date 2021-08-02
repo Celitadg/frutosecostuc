@@ -1,0 +1,32 @@
+$rosa: #FAEBE0;
+$verde-claro: #C9E4C5;
+$verde-oscuro: #B5CDA3;
+$gris: #C1AC95;
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: $verde-claro;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    background-color: $rosa;
+    a{
+        margin-left: 1rem;
+        text-decoration: none;
+        color: $verde-oscuro;
+        &:hover{
+            color: $gris;
+        }
+    }
+}
+
+svg{
+    fill: currentColor;
+}
