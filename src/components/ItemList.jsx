@@ -21,7 +21,7 @@ export default function ItemList() {
 
     return(
         <>
-        { productos.map(item => <Item key={item.id} title={item.title} description={item.description} price={item.price} />) }
+        { productos.map(item => <Item key={item.id} title={item.title} picture={item.picture} description={item.description} price={item.price} />) }
         </>
     )
 }

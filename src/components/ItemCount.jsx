@@ -1,5 +1,5 @@
 import { useState } from "react"; 
-import Logo from "./img/sport-mix.jpg";
+import sportmix from "./img/sportmix.jpg";
 import AddToCart from "./AddToCart";
 
 export default function ItemCount ({ stock, initial }) {
@@ -21,7 +21,7 @@ export default function ItemCount ({ stock, initial }) {
     return(
         <div className="card">  
             <h2>Sport Mix</h2>
-            <img src={ Logo } alt="Sport Mix" />
+            <img src={ sportmix } alt="Sport Mix" />
             <p>$610/kg</p>
             <button onClick = { sumar }>+</button>
             <button onClick = { restar }>-</button>

@@ -2,11 +2,11 @@
 
 
 
-export default function Item({ title, description, price, picture  }) {
+export default function ItemDetail({ title, description, price, picture }) {
     return(
             <div className="item">
                 <h2>{title}</h2>
-                <img src={picture} alt={title} />
+                <img src={ picture } alt= { title } />
                 <p>{description}</p>
                 <p>{price}</p>
             </div>
