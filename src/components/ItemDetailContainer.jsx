@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react"
 import ItemDetail from './ItemDetail';
 import {products} from "./Api/Products"
+import { useParams } from "react-router";
 
 
 
 export default function ItemDetailContainer() {
+
+    const {id} = useParams()
     const [prod, setProd] = useState()
 
     useEffect(() => {
         const getItem = () => {
             return new Promise ((resolve, reject) => {
                 setTimeout(() => {
-                    resolve(products[3])
+                    resolve(products[`${id-1}`])
                 }, 2000)
             })
         }

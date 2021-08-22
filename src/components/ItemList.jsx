@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Item from "./Item"
 import {products} from "./Api/Products"
+import { Link } from 'react-router-dom'
 
 
 
@@ -20,8 +21,10 @@ export default function ItemList() {
     }, [productos])
 
     return(
-        <>
-        { productos.map(item => <Item key={item.id} title={item.title} picture={item.picture} description={item.description} price={item.price} />) }
-        </>
+        <div className="container">
+            <div className='container-items'>
+                { productos.map(item => <Link className='links' to={`/item/${item.id}`}><Item key={item.id} title={item.title} picture={item.picture} description={item.description} price={item.price} /></Link> ) }
+            </div>
+        </div>
     )
 }
