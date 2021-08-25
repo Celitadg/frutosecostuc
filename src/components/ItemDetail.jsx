@@ -1,14 +1,16 @@
+import ItemCount from "./ItemCount"
 
 
 
+export default function ItemDetail({ title, description, price, picture, stock }) {
 
-export default function ItemDetail({ title, description, price, picture }) {
     return(
-            <div className="item">
+            <div className="item-detail">
                 <h2>{title}</h2>
                 <img src={ picture } alt= { title } />
                 <p>{description}</p>
                 <p>{price}</p>
+                <ItemCount stock={stock} />
             </div>
     )
 }

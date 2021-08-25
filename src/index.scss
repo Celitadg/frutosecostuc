@@ -51,11 +51,22 @@ button{
     background-color: $rosa;
 }
 
-.card, .item{
+.item{
     padding: 1rem;
     text-align: center;
     width: 18rem;
     height: 22rem;
+    border-style: solid;
+    border-color: $verde-oscuro;
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+.item-detail{
+    padding: 1rem;
+    text-align: center;
+    width: 18rem;
+    height: 27rem;
     border-style: solid;
     border-color: $verde-oscuro;
     border-radius: 20px;

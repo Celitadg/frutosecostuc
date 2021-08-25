@@ -24,7 +24,7 @@ export default function ItemDetailContainer() {
     return(
         <>
         
-        { prod && <ItemDetail key={prod.id} title={prod.title} description={prod.description} price={prod.price} picture={prod.picture} /> }
+        { prod && <ItemDetail key={prod.id} title={prod.title} description={prod.description} price={prod.price} picture={prod.picture} stock={prod.stock}/> }
 
         </>
     )
