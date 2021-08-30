@@ -15,7 +15,7 @@ export default function ItemDetailContainer() {
             return new Promise ((resolve, reject) => {
                 setTimeout(() => {
                     resolve(products[`${id-1}`])
-                }, 2000)
+                }, 2)
             })
         }
         getItem().then((prod) => setProd(prod))
@@ -24,7 +24,7 @@ export default function ItemDetailContainer() {
     return(
         <>
         
-        { prod && <ItemDetail key={prod.id} title={prod.title} description={prod.description} price={prod.price} picture={prod.picture} stock={prod.stock}/> }
+        { prod && <ItemDetail product={prod} key={prod.id} title={prod.title} description={prod.description} price={prod.price} picture={prod.picture} stock={prod.stock}/> }
 
         </>
     )

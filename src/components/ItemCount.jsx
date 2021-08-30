@@ -1,15 +1,21 @@
-import { useState } from "react"; 
+import { useContext, useState } from "react"; 
 import { Link } from "react-router-dom";
+import { CartContext } from "./context/CartContex";
 
-export default function ItemCount ({ stock }) {
+
+export default function ItemCount ({ stock, title, product }) {
+
+    const myCart = useContext (CartContext)
+    console.log(myCart)
 
     const [count, setCount] = useState (0)
     const [showAddButton, setShowAddButton] = useState (true)
 
     const add = () => {
         if (count > 0) {
-        console.log(`se añadió ${count} al carrito`)
+        /* console.log(`se añadió ${count} ${title} al carrito`) */
         setShowAddButton (false)
+        myCart.addItem(product, count)
         }
     }
 

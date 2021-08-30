@@ -14,7 +14,7 @@ export default function ItemList() {
             return new Promise ((resolve, reject) => {
                 setTimeout(() => {
                     resolve(products)
-                }, 2000)
+                }, 2)
             })
         }
         itemList().then((prod) => setProductos(prod))

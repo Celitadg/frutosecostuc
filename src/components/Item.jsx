@@ -8,7 +8,7 @@ export default function Item({ title, description, price, picture }) {
                 <h2>{title}</h2>
                 <img src={picture} alt={title} />
                 <p>{description}</p>
-                <p>{price}</p>
+                <p>${price}/Kg</p>
             </div>
     )
 }
