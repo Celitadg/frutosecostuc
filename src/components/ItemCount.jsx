@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { CartContext } from "./context/CartContex";
 
 
-export default function ItemCount ({ stock, title, product }) {
+export default function ItemCount ({ stock, product }) {
+
+    
 
     const myCart = useContext (CartContext)
     console.log(myCart)
@@ -13,10 +15,14 @@ export default function ItemCount ({ stock, title, product }) {
 
     const add = () => {
         if (count > 0) {
-        /* console.log(`se añadió ${count} ${title} al carrito`) */
         setShowAddButton (false)
         myCart.addItem(product, count)
         }
+    }
+
+    const volver = () => {
+        setShowAddButton (true)
+        myCart.removeItem(product)
     }
 
     const sumar = () => {
@@ -35,13 +41,17 @@ export default function ItemCount ({ stock, title, product }) {
     return(
         <div>  
             {showAddButton && 
-            <div>
+            <>
                 <button onClick = { sumar }>+</button>
                 <button onClick = { restar }>-</button>
                 <p>{ count }</p>
                 <button onClick = { add }>Añadir al carrito</button>
-            </div>}
-            {!showAddButton && <Link to='/cart'><button>Terminar mi compra</button></Link>}
+            </>}
+            {!showAddButton && 
+            <>
+                <Link to='/cart'><button>Terminar mi compra</button></Link>
+                <button onClick = { volver }>Atrás</button>
+            </>  }
         </div>
     )
 
