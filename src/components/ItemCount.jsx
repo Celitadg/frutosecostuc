@@ -8,7 +8,7 @@ export default function ItemCount ({ stock, product }) {
     
 
     const myCart = useContext (CartContext)
-    console.log(myCart)
+    /* console.log(myCart) */
 
     const [count, setCount] = useState (0)
     const [showAddButton, setShowAddButton] = useState (true)

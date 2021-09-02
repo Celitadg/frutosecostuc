@@ -33,6 +33,15 @@ h1{
 h2{
     text-transform: uppercase;
     color: $gris;
+    text-align: center;
+}
+
+h3{
+    color: $gris;
+}
+
+h4{
+    color:$gris;
 }
 
 svg{
@@ -52,7 +61,7 @@ button{
 }
 
 sup{
-    font-size: 1rem;
+    font-size: .9rem;
     margin-left: 0.5rem;
 }
 
@@ -88,6 +97,19 @@ sup{
     place-items: center;
 }
 
+.container-item-detail{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.carrito{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+}
+
 .links{
     text-decoration: none;
 }
+

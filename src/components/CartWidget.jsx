@@ -7,7 +7,7 @@ export default function CartWidget() {
 
     
 
-    const itemsTotal = compras.reduce((acumulado, compra)=> acumulado + compra.cantidad , 0)
+    const itemsTotal = compras.reduce((acumulado, compra)=> (acumulado + compra.cantidad) , 0)
 
 
     return(

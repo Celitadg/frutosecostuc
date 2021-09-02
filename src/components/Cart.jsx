@@ -14,16 +14,23 @@ export default function Cart() {
 
     return(
         <>
-            <h1>Mi Carrito</h1>
-            {(compras.length===0) ? <p>Tu carrito está vacío, para encontrar productos <Link to='/'>clickeá acá</Link></p> 
-                                    :compras.map(element => <div><Link to={`/item/${element.id}`}><h3>{element.title}</h3></Link>
-                                        <p>{element.cantidad}</p>
-                                        <p>${(element.price)*(element.cantidad)}</p>
-                                        <button onClick={()=> removeItem(element)}>Eliminar</button>
-                                    </div>)}
-            <button onClick={()=> clear()}>Vaciar Carrito</button>
-            <div>${precioTotal}</div>
-            
+            <h2>Mi Carrito</h2>
+            <section className='carrito'>
+
+                <div>
+                    {(compras.length===0) ? <p>Tu carrito está vacío, para encontrar productos <Link to='/'>clickeá acá</Link></p> 
+                                            :compras.map(element => <div><Link className='links' to={`/item/${element.id}`}><h3>{element.title}</h3></Link>
+                                                <p>Cantidad: {element.cantidad} x ${element.price}</p>
+                                                <p>Subtotal: ${(element.price)*(element.cantidad)}</p>
+                                                <button onClick={()=> removeItem(element)}>Eliminar</button>
+                                            </div>)}
+                </div>       
+                <div>    
+                {(compras.length===0) ? <></> : 
+                <><button onClick={()=> clear()}>Vaciar Carrito</button>
+                <h4>Total: ${precioTotal}</h4></>}
+                </div>
+            </section>
         </>
     )
 }

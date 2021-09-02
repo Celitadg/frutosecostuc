@@ -17,14 +17,15 @@ export default function CartContextProvider ({children}) {
         if (isInCart(compra)) {
             compras.map(prod => {
                 if (prod.id === compra.id) {
-                   /*  prod.cantidad += quantity  */
-                alert(`Ya añadiste ${compra.title} a tu carrito`)
+                /* return prod.cantidad += quantity */
+                alert(`Ya añadiste ${compra.title} a tu carrito, presiona "atrás" y selecciona la cantidad total de ${compra.title} que deseas.`)
                 }
             })
         } else {
             setCompras([...compras, {...compra, cantidad:quantity}])
         }
     }
+    
 
     function removeItem(compra){
         const eliminado = compras.filter((prod) =>
