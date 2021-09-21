@@ -1,24 +1,33 @@
 import { useState, useEffect } from "react"
 import Item from "./Item"
-import {products} from "./Api/Products"
 import { Link } from 'react-router-dom'
+import { Firebase } from "../firebase"
 
 
 
 export default function ItemList() {
     
     const [productos, setProductos] = useState([])
-    
+
     useEffect(() => {
-        const itemList = () => {
-            return new Promise ((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(products)
-                }, 2)
-            })
-        }
-        itemList().then((prod) => setProductos(prod))
-    }, [productos])
+        Firebase.getAll('products').then(docs => {
+            const arr = [];
+            docs.forEach(item => {
+            const data = item.data();
+            arr.push({
+                    key:item.id,
+                    id:item.id,
+                    title:data.title,
+                    price:data.price,
+                    stock:data.stock,
+                    picture:data.picture
+                }
+                );
+            });
+            setProductos(arr);
+        });
+    }, [productos]);
+    
 
     return(
         <div className="container">

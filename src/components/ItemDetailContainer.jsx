@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import ItemDetail from './ItemDetail';
-import {products} from "./Api/Products"
 import { useParams } from "react-router";
+import { Firebase } from "../firebase";
 
 
 
@@ -11,15 +11,19 @@ export default function ItemDetailContainer() {
     const [prod, setProd] = useState()
 
     useEffect(() => {
-        const getItem = () => {
-            return new Promise ((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(products[`${id-1}`])
-                }, 2)
-            })
-        }
-        getItem().then((prod) => setProd(prod))
-    }, [prod])
+        Firebase.get(`products/${id}`).then(res => {
+            const item = res.data();
+            setProd({
+                id:id,
+                title:item.title,
+                price:item.price,
+                stock:item.stock,
+                picture:item.picture,
+                }
+            );
+        });
+    }, [prod]);
+
 
     return(
         <>
