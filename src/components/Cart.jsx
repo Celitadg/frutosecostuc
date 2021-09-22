@@ -5,19 +5,10 @@ import { Firebase } from "../firebase"
 
 
 export default function Cart() {
-    const {compras, removeItem, clear, precioTotal } = useContext (CartContext)
+    const {compras, removeItem, clear, precioTotal, newOrder } = useContext (CartContext)
 
 
     const handlePurchase = () => {
-        const newOrder = {
-            buyer: {
-                name: 'Juan Pérez',
-                phone: '+54 9 9999-9999',
-                email: 'juanperezl@gmail.com'
-            },
-            compras: [],
-            date: new Date().toString()
-        };
         compras.forEach(item => {
             newOrder.compras.push(item);
         });

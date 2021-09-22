@@ -39,9 +39,19 @@ export default function CartContextProvider ({children}) {
 
     const precioTotal = compras.reduce((acumulado, compra)=> acumulado + (compra.price * compra.cantidad), 0)
 
+    const newOrder = {
+        buyer: {
+            name: 'Juan Pérez',
+            phone: '+54 9 9999-9999',
+            email: 'juanperezl@gmail.com'
+        },
+        compras: [],
+        date: new Date().toString()
+    };
+
     const value = useMemo(()=>{
         return({
-            compras, addItem, removeItem, clear, precioTotal
+            compras, addItem, removeItem, clear, precioTotal, newOrder
         })
     }, [compras])
         
