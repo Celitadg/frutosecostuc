@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, getDocs, getDoc, setDoc, addDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, getDoc, addDoc, doc } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBmmD1t_8y028Jdd0g_0iW-OhNFc0sE348",
@@ -33,11 +33,6 @@ export class Firebase {
     const pathSegments = path.split('/');
     const ref = this.getCollection(...pathSegments);
     return getDocs(ref);
-    }
-
-    static set(path, obj) {
-    const pathSegments = path.split('/');
-    return setDoc(this.getDoc(...pathSegments), obj);
     }
 
     static add(path, obj) {

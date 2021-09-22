@@ -17,7 +17,6 @@ export default function CartContextProvider ({children}) {
         if (isInCart(compra)) {
             compras.map(prod => {
                 if (prod.id === compra.id) {
-                /* return prod.cantidad += quantity */
                 alert(`Ya añadiste ${compra.title} a tu carrito, presiona "atrás" y selecciona la cantidad total de ${compra.title} que deseas.`)
                 }
             })
@@ -38,9 +37,11 @@ export default function CartContextProvider ({children}) {
         setCompras ([])
     }
 
+    const precioTotal = compras.reduce((acumulado, compra)=> acumulado + (compra.price * compra.cantidad), 0)
+
     const value = useMemo(()=>{
         return({
-            compras, addItem, removeItem, clear
+            compras, addItem, removeItem, clear, precioTotal
         })
     }, [compras])
         
