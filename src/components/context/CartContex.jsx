@@ -46,7 +46,8 @@ export default function CartContextProvider ({children}) {
             email: 'juanperezl@gmail.com'
         },
         compras: [],
-        date: new Date().toString()
+        date: new Date().toString(), 
+        id: ''
     };
 
     const value = useMemo(()=>{

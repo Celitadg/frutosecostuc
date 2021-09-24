@@ -1,12 +1,12 @@
 import { useContext } from "react"
 import { CartContext } from "./context/CartContex"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { Firebase } from "../firebase"
 
 
 export default function Cart() {
     const {compras, removeItem, clear, precioTotal, newOrder } = useContext (CartContext)
-
+    const history = useHistory();
 
     const handlePurchase = () => {
         compras.forEach(item => {
@@ -15,9 +15,12 @@ export default function Cart() {
         newOrder['totalPrice'] = precioTotal;
         console.log(newOrder);
     
-        Firebase.add('orders', newOrder).then(res => console.log(res));
+        Firebase.add('orders', newOrder).then(res => {
+            newOrder['id']= res.id 
+            history.push("/order")
+        });
     };
-
+    
 
     return(
         <>
@@ -36,9 +39,13 @@ export default function Cart() {
                 {(compras.length===0) ? <></> : 
                 <><button onClick={()=> clear()}>Vaciar Carrito</button>
                 <h4>Total: ${precioTotal}</h4></>}
-                <Link to='/order'><button onClick={handlePurchase}>Comprar</button></Link>
+                <button onClick={handlePurchase}>Comprar</button>
                 </div>
             </section>
         </>
     )
 }
+
+
+
+

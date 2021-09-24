@@ -1,12 +1,14 @@
 import { CartContext } from "./context/CartContex"
 import { useContext } from "react"
 
+
 export default function Order() {
 
     const { compras, precioTotal, newOrder } = useContext (CartContext)
     return(
         <>
             <h3>¡Gracias por su compra!</h3>
+            <p>Id: {newOrder.id}</p>
             <p>Fecha: {newOrder.date}</p>
             <h4>Detalle de su orden:</h4>
             <p>
