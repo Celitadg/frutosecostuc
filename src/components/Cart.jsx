@@ -5,22 +5,19 @@ import { Firebase } from "../firebase"
 
 
 export default function Cart() {
-    const {compras, removeItem, clear, precioTotal, newOrder } = useContext (CartContext)
+    const {compras, removeItem, clear, precioTotal, newOrder, setNewOrder, setId } = useContext (CartContext)
     const history = useHistory();
 
     const handlePurchase = () => {
-        compras.forEach(item => {
-            newOrder.compras.push(item);
-        });
-        newOrder['totalPrice'] = precioTotal;
-        console.log(newOrder);
+        setNewOrder({...newOrder, totalPrice:precioTotal, compras:compras })
     
         Firebase.add('orders', newOrder).then(res => {
-            newOrder['id']= res.id 
+            setId(res.id)
+            clear()
             history.push("/order")
-        });
+        })
+        
     };
-    
 
     return(
         <>

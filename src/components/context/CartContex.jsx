@@ -1,10 +1,21 @@
-import React, { createContext, useState, useMemo } from "react"
+import React, { createContext, useState } from "react"
 
 export const CartContext = createContext([]) 
 
 export default function CartContextProvider ({children}) {
 
     const [compras, setCompras] = useState([])
+    const [id, setId] = useState('')
+    const [newOrder, setNewOrder] = useState({
+        buyer: {
+            name: 'Juan Pérez',
+            phone: '+54 9 9999-9999',
+            email: 'juanperezl@gmail.com'
+        },
+        compras: [],
+        totalPrice: '',
+        date: new Date().toString(),
+    });
     
     function isInCart(compra){
         if (compras?.find(prod => prod.id === compra.id)){
@@ -12,6 +23,7 @@ export default function CartContextProvider ({children}) {
         }
 
     }
+
 
     function addItem(compra, quantity){
         if (isInCart(compra)) {
@@ -39,27 +51,9 @@ export default function CartContextProvider ({children}) {
 
     const precioTotal = compras.reduce((acumulado, compra)=> acumulado + (compra.price * compra.cantidad), 0)
 
-    const newOrder = {
-        buyer: {
-            name: 'Juan Pérez',
-            phone: '+54 9 9999-9999',
-            email: 'juanperezl@gmail.com'
-        },
-        compras: [],
-        date: new Date().toString(), 
-        id: ''
-    };
-
-    const value = useMemo(()=>{
-        return({
-            compras, addItem, removeItem, clear, precioTotal, newOrder
-        })
-    }, [compras])
-        
-
     return(
         <>
-            <CartContext.Provider value={value}> 
+            <CartContext.Provider value={{compras, addItem, removeItem, clear, precioTotal, newOrder, setNewOrder, id, setId}}> 
                 {children}
             </ CartContext.Provider>
         </>

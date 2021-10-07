@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart';
 import CartContextProvider from './components/context/CartContex';
 import Order from './components/Order';
+import ItemCategoryList from './components/ItemCategoryList';
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route exact path="/category/:id">
             <ItemListContainer />
+          </Route>
+          <Route exact path='/sinpasas'>
+            <ItemCategoryList />
           </Route>
           <Route exact path='/item/:id'>
             <ItemDetailContainer />

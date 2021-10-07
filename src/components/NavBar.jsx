@@ -12,6 +12,7 @@ export default function NavBar() {
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/">Productos</Link>
+                <Link to="/sinpasas">Sin pasas</Link>
                 {(compras.length!==0) ? <Link to="/cart"><CartWidget /></Link>: <></>}
             </nav>
         </header>

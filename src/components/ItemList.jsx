@@ -3,8 +3,6 @@ import Item from "./Item"
 import { Link } from 'react-router-dom'
 import { Firebase } from "../firebase"
 
-
-
 export default function ItemList() {
     
     const [productos, setProductos] = useState([])
@@ -20,7 +18,8 @@ export default function ItemList() {
                     title:data.title,
                     price:data.price,
                     stock:data.stock,
-                    picture:data.picture
+                    picture:data.picture, 
+                    description:data.description
                 }
                 );
             });
