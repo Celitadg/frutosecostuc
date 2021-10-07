@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/frutosecostuc/static/css/main.6236d7a9.chunk.css",
+    "main.js": "/frutosecostuc/static/js/main.8c344cc1.chunk.js",
+    "main.js.map": "/frutosecostuc/static/js/main.8c344cc1.chunk.js.map",
+    "runtime-main.js": "/frutosecostuc/static/js/runtime-main.a632f601.js",
+    "runtime-main.js.map": "/frutosecostuc/static/js/runtime-main.a632f601.js.map",
+    "static/js/2.7f99fda0.chunk.js": "/frutosecostuc/static/js/2.7f99fda0.chunk.js",
+    "static/js/2.7f99fda0.chunk.js.map": "/frutosecostuc/static/js/2.7f99fda0.chunk.js.map",
+    "index.html": "/frutosecostuc/index.html",
+    "static/css/main.6236d7a9.chunk.css.map": "/frutosecostuc/static/css/main.6236d7a9.chunk.css.map",
+    "static/js/2.7f99fda0.chunk.js.LICENSE.txt": "/frutosecostuc/static/js/2.7f99fda0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a632f601.js",
+    "static/js/2.7f99fda0.chunk.js",
+    "static/css/main.6236d7a9.chunk.css",
+    "static/js/main.8c344cc1.chunk.js"
+  ]
+}
