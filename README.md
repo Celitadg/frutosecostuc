@@ -15,9 +15,9 @@ Luego, para inicializar la aplicación en el navegador, escribir el siguiente co
 
 Finalmente, para abrirla, dirigirse a http://localhost:3000 (por defecto, React usa el puerto 3000. En el caso que ya tenga una aplicación inicializada, este número podría variar).
 
-### También se puede acceder mediante la siguiente dirección:
+### También se puede acceder mediante las siguientes direcciones:
 
-https://celitadg.github.io/frutosecostuc/
+### `https://celitadg.github.io/frutosecostuc/ o https://frutosecostuc.herokuapp.com/`
 ## Sobre mí
 
 Mi nombre es Celia De Gregorio y me encuentro realizando la carrera de Full Stack Developer en Coder House.
